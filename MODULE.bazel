@@ -3,6 +3,7 @@ module(name = "quake3-server", version = "1.0")
 bazel_dep(name = "bazel_skylib", version = "1.8.2")
 bazel_dep(name = "rules_oci", version = "2.2.6")
 bazel_dep(name = "rules_pkg", version = "1.1.0")
+bazel_dep(name = "rules_foreign_cc", version = "0.15.1")
 
 oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
 oci.pull(
@@ -11,11 +12,11 @@ oci.pull(
     image = "gcr.io/distroless/cc",
     platforms = ["linux/amd64"],
 )
-use_repo(oci, "distroless_base")
+use_repo(oci, "distroless_base", "distroless_base_linux_amd64")
 
 repos = use_extension("//:deps.bzl", "repos_bzlmod")
 use_repo(
     repos,
-    "ioquake3",
+    "ioq3",
     "baseq3_full",
 )

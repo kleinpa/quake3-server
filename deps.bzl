@@ -34,11 +34,11 @@ baseq3_repo = repository_rule(
 
 def _module_impl(bzlmod = False):
     http_archive(
-        name = "ioquake3",
-        build_file = "@//:ioquake3.BUILD",
-        sha256 = "d5174dd31885e58d530df8199a7c5808e1ec181aec3e8c8f0e94cff6b4cd4cb6",
-        strip_prefix = "ioq3-ab18167a09415e9e9f4859c197bad72ec39807d5",
-        urls = ["https://github.com/ioquake/ioq3/archive/ab18167a09415e9e9f4859c197bad72ec39807d5.zip"],
+        name = "ioq3",
+        build_file = "@//:ioq3.BUILD",
+        sha256 = "6443117ce5cfb704463331962f1465be6d2ccf3abf9a6749c93ec41562229509",
+        strip_prefix = "ioq3-f63b5cf8b43e4238f2a9f56c8cc08c8c712776cb",
+        urls = ["https://github.com/ioquake/ioq3/archive/f63b5cf8b43e4238f2a9f56c8cc08c8c712776cb.zip"],
     )
     baseq3_repo(
         name = "baseq3_full",
